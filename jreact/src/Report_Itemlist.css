@@ -1,0 +1,579 @@
+/* --- Wrapper --- */
+.report-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Changed from min-height to height to lock layout to screen */
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* --- SIDEBAR --- */
+.report-sidebar {
+  width: 100px;
+  height: 100%; /* Fills the viewport height */
+  background-color: white; 
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-top: 50px;
+  gap: 30px;
+  transition: width 0.3s ease-in-out; 
+  z-index: 100; 
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  flex-shrink: 0; /* Prevents sidebar from shrinking when window is small */
+}
+
+.report-sidebar:hover {
+  width: 402px;
+  align-items: flex-start;
+  padding-left: 30px; 
+}
+
+.report-nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  justify-content: center; 
+}
+
+.report-sidebar:hover .report-nav-item {
+  width: 337px;
+  height: 70px;
+  justify-content: flex-start; 
+  padding-left: 20px; 
+  gap: 20px; 
+}
+
+.report-nav-item.selected {
+  background-color: #FFC107; /* Yellow active state */
+}
+
+.report-nav-item:not(.selected):hover {
+  background-color: #f0f0f0; 
+}
+
+.report-nav-icon {
+  width: 30px; 
+  height: 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; 
+  flex-shrink: 0; 
+}
+
+.report-nav-text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0;
+  width: 0;
+  overflow: hidden; 
+  white-space: nowrap; 
+  pointer-events: none; 
+  transition: opacity 0.2s ease-in-out;
+  transition-delay: 0.1s; 
+}
+
+.report-sidebar:hover .report-nav-text {
+  opacity: 1;
+  width: auto;
+  pointer-events: auto;
+}
+
+/* --- MAIN CONTENT --- */
+.report-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fills the remaining height */
+  overflow: hidden; /* Hides overflow on the main container */
+  /* Padding removed here and moved to children to support full-width scrollbar */
+}
+
+/* --- Header --- */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* Padding added here */
+  margin-bottom: 0;
+  background-color: #f9f9f9;
+  flex-shrink: 0; /* Ensures header doesn't shrink when scrolling */
+}
+
+.report-title-group {
+  display: flex;
+  align-items: center;
+}
+
+.report-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.report-main-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0;
+  color: #000;
+}
+
+.report-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Removed report-global-search styles as element is removed */
+
+/* --- NEW EXPORT BUTTON STYLE --- */
+.report-export-btn {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.report-export-btn:hover {
+  background-color: #0056b3;
+}
+
+.report-export-btn ion-icon {
+  font-size: 20px;
+}
+
+.report-exit-button {
+  background-color: #FF4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.report-exit-button:hover {
+  background-color: #d32f2f;
+}
+
+/* --- SCROLL CONTAINER (New) --- */
+/* This handles the scrolling while keeping header fixed */
+.report-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 40px 40px 40px;
+}
+
+/* --- Tabs --- */
+.report-tabs-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.report-tab-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding-bottom: 5px;
+  color: #555;
+  position: relative;
+}
+
+.report-tab-btn.active {
+  color: #000;
+}
+
+.report-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+
+/* --- Content Card --- */
+.report-content-card {
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px; /* Ensures card looks good even when empty */
+}
+
+/* --- Card Toolbar --- */
+.report-card-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* --- LOCAL SEARCH & SUGGESTIONS --- */
+.report-local-search {
+  position: relative; /* Essential for suggestion dropdown positioning */
+  background-color: #EEE;
+  border-radius: 20px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.report-local-search .search-icon-small {
+  margin-right: 10px;
+  color: #888;
+}
+
+.report-local-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Suggestion Dropdown Styles */
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%; /* Puts it directly below the input */
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #333;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f8ff; /* Light blue on hover */
+}
+
+.report-action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Updated Button Styles to match Images */
+.btn-add-item {
+  background-color: #bbf7d0; /* Light Green */
+  color: #166534; /* Darker Green text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.btn-remove-item {
+  background-color: #fecaca; /* Light Red */
+  color: #991b1b; /* Darker Red text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.btn-add-item:hover, .btn-remove-item:hover {
+  opacity: 0.9;
+}
+
+/* --- Table Styles --- */
+.report-table-container {
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.report-table thead tr {
+  background-color: #ddd; 
+}
+
+.report-table th, .report-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.report-table th {
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.report-table th:hover {
+  background-color: #ccc;
+}
+
+.th-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 10px; 
+}
+
+.th-content ion-icon {
+    font-size: 18px; 
+    color: #666;
+}
+
+.report-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.report-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.checkbox-cell {
+  text-align: center;
+}
+
+.checkbox-cell input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* --- SHARED MODAL STYLES (Appended) --- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 15px; 
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ADD ITEM MODAL */
+.add-item-modal {
+  width: 900px;
+  max-width: 90%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.close-icon {
+  font-size: 40px;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.add-item-body {
+  display: flex;
+  gap: 50px;
+}
+
+.form-column {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.modal-input {
+  padding: 12px 15px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-select {
+  appearance: none;
+  background-color: white;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  pointer-events: none;
+  color: #000;
+}
+
+.image-column {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-upload-box {
+  width: 250px;
+  height: 250px;
+  background-color: #D9D9D9; 
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.image-upload-box ion-icon {
+  color: #000;
+}
+
+.add-image-text {
+  font-size: 20px;
+  color: #000;
+  margin: 0;
+}
+
+/* REMOVE ITEM MODAL */
+.remove-item-modal {
+  width: 500px;
+  padding: 40px 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.remove-message {
+  font-size: 28px;
+  font-weight: 400; 
+  color: #000;
+  margin: 0 0 40px 0;
+  line-height: 1.4;
+}
+
+.remove-modal-actions {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+.remove-btn {
+  padding: 10px 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s;
+  min-width: 150px;
+}
+
+.remove-btn.cancel {
+  border: 1px solid #333;
+  color: #333;
+}
+
+.remove-btn.confirm {
+  border: 1px solid #333;
+  color: #333;
+}
+
+.remove-btn:hover {
+  background-color: #f0f0f0;
+}

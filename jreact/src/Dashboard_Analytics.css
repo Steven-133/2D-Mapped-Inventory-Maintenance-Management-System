@@ -1,0 +1,477 @@
+/* --- LAYOUT WRAPPERS (Matches Admin_hp.css) --- */
+.dash-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- SIDEBAR (Matches Admin_hp style exactly) --- */
+.dash-sidebar {
+    width: 100px;
+    height: 100%;
+    background-color: white;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 30px;
+    transition: width 0.3s ease-in-out;
+    z-index: 100;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.dash-sidebar:hover {
+    width: 402px;
+    align-items: flex-start;
+    padding-left: 30px;
+}
+
+.dash-nav-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.dash-sidebar:hover .dash-nav-item {
+    width: 337px;
+    justify-content: flex-start;
+    padding-left: 20px;
+    gap: 20px;
+}
+
+/* Active State - YELLOW */
+.dash-nav-item.selected {
+    background-color: #FFC107;
+}
+
+.dash-nav-item:not(.selected):hover {
+    background-color: #f0f0f0;
+}
+
+.dash-nav-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.dash-nav-text {
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.dash-sidebar:hover .dash-nav-text {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.dash-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dash-container {
+    flex: 1;
+    padding: 20px 40px;
+    overflow-y: hidden; /* Scroll inside the area below header */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+
+.dash-main-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
+}
+
+.dash-controls .btn-action {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+}
+
+.dash-controls .logout { background: #dc3545; }
+
+/* --- ANALYTICS SPECIFIC STYLES --- */
+.dash-scroll-area {
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.dash-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.kpi-value { font-size: 36px; font-weight: 800; margin: 10px 0; }
+.red-accent .kpi-value { color: #dc3545; }
+.orange-accent .kpi-value { color: #fd7e14; }
+.green-accent .kpi-value { color: #28a745; }
+
+.kpi-card p { color: #7f8c8d; font-size: 13px; margin: 0; }
+
+.dash-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dash-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.card-header h3 { margin: 0; font-size: 16px; color: #333; }
+
+/* Link Button Style */
+.btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+.btn-link:hover { color: #0056b3; }
+
+/* Large Modal Override */
+.large-modal {
+    width: 800px !important; 
+    max-width: 95vw;
+    text-align: left;
+    padding: 25px;
+}
+
+.modal-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.btn-close-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+.btn-close-icon:hover { color: #dc3545; }
+
+/* Scrollable Table inside Modal */
+.modal-scroll-table {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.modal-scroll-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modal-scroll-table th,
+.modal-scroll-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.modal-scroll-table th {
+    position: sticky;
+    top: 0;
+    background: #f1f1f1;
+    z-index: 10;
+}
+
+/* TABLE STYLES */
+.dash-list table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.dash-list th { text-align: left; color: #95a5a6; font-weight: 600; padding-bottom: 8px; font-size: 11px; text-transform: uppercase; }
+.dash-list td { padding: 10px 0; border-bottom: 1px solid #f9f9f9; color: #333; }
+
+.sub-text { font-size: 11px; color: #95a5a6; }
+
+/* BADGES */
+.badge { padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.badge-red { background: #fadbd8; color: #c0392b; }
+.badge-orange { background: #fdebd0; color: #d35400; }
+
+/* BESTSELLERS */
+.bestseller-row { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
+.rank-circle { width: 24px; height: 24px; background: #ecf0f1; color: #7f8c8d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; margin-right: 15px; }
+.bestseller-info { flex: 1; display: flex; flex-direction: column; }
+.item-name { font-weight: 600; font-size: 13px; color: #333; }
+.item-model { font-size: 11px; color: #95a5a6; }
+.bestseller-qty { font-weight: 800; color: #28a745; }
+
+/* EXPIRY */
+.full-width { grid-column: span 3; }
+.empty-state { color: #bdc3c7; font-style: italic; text-align: center; padding: 20px; }
+
+/* --- FLOATING EXPORT BUTTON STYLES --- */
+.floating-export-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.floating-export-btn:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+/* --- EXPORT MENU OVERLAY --- */
+.export-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.export-menu {
+    background: white;
+    width: 300px;
+    margin: 0 30px 100px 0; /* Positioned above the floating button */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.export-menu-header {
+    background: #f8f9fa;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.export-menu-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.export-menu-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.export-options {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.export-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.export-option-btn:hover {
+    background: #f1f3f5;
+}
+
+.export-option-btn ion-icon {
+    font-size: 18px;
+}
+
+.full-report {
+    background: #e7f1ff;
+    color: #0056b3;
+    font-weight: 600;
+}
+.full-report:hover {
+    background: #d0e1fd;
+}
+
+.export-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+}
+.export-divider span {
+    background: #fff;
+    font-size: 10px;
+    color: #999;
+    font-weight: bold;
+}
+
+/* --- NEW HEADER FLEX STYLES --- */
+.card-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.card-header-flex h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between Dropdown and See All button */
+}
+
+/* --- DROPDOWN STYLE --- */
+.dash-filter-dropdown {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  color: #555;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.dash-filter-dropdown:hover {
+  border-color: #bbb;
+  background-color: #fff;
+}
+
+.dash-filter-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* --- ENSURE BTN-LINK IS STYLED IF NOT ALREADY --- */
+.btn-link {
+  font-size: 12px;
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}

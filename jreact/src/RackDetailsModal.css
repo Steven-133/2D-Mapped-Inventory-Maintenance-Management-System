@@ -1,0 +1,315 @@
+/* --- 1. Modal Structure --- */
+.rack-details-modal-user-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.rack-details-modal-user-barcode-container {
+    background: white;
+    padding: 4px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
+
+.rack-details-modal-user-barcode-container canvas {
+    max-height: 100%;
+}
+ 
+.rack-details-modal-user-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 950px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    gap: 50px;
+}
+ 
+.rack-details-modal-user-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+ 
+/* --- 2. Left Section (Rack View) --- */
+.rack-details-modal-user-left-section {
+    flex: 2;
+}
+ 
+.rack-details-modal-user-rack-id-title {
+    margin: 0 0 5px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+ 
+.rack-details-modal-user-rack-area-text {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #666;
+}
+ 
+.rack-details-modal-user-legend-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+ 
+.rack-details-modal-user-legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+ 
+.rack-details-modal-user-legend-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+ 
+.rack-details-modal-user-front-view-title {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+ 
+/* --- Beam List --- */
+.rack-details-modal-user-beam-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+ 
+.rack-details-modal-user-beam-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+ 
+.rack-details-modal-user-beam-label {
+    width: 70px;
+    font-weight: 700;
+    font-size: 16px;
+}
+ 
+.rack-details-modal-user-beam-display {
+    flex: 1;
+    height: 40px;
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+ 
+/* --- Action Buttons --- */
+.rack-details-modal-user-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+ 
+.rack-details-modal-user-action-button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+ 
+.rack-details-modal-user-action-button span {
+    margin-right: 8px;
+}
+ 
+.rack-details-modal-user-checkin-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+ 
+.rack-details-modal-user-checkout-button {
+    background-color: #fff;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+ 
+.rack-details-modal-user-delete-button {
+    padding: 12px;
+    background-color: #fff;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 18px;
+}
+ 
+/* --- 3. Right Section (Information) --- */
+.rack-details-modal-user-right-section {
+    flex: 1;
+    padding-left: 30px;
+    border-left: 1px solid #eee;
+}
+ 
+.rack-details-modal-user-info-title {
+    margin: 0 0 25px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+ 
+/* --- Occupancy Bar --- */
+.rack-details-modal-user-occupancy-group {
+    margin-bottom: 25px;
+}
+ 
+.rack-details-modal-user-occupancy-label {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+ 
+.rack-details-modal-user-progress-bar-container {
+    height: 12px;
+    background-color: #eee;
+    border-radius: 6px;
+}
+ 
+.rack-details-modal-user-progress-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+ 
+.rack-details-modal-user-occupancy-percentage-text {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+ 
+.rack-details-modal-user-info-row {
+    margin: 0 0 25px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+ 
+.rack-details-modal-user-info-value {
+    float: right;
+    font-weight: bold;
+}
+ 
+/* --- Image Preview --- */
+.rack-details-modal-user-image-title {
+    margin: 30px 0 15px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+ 
+.rack-details-modal-user-image-placeholder {
+    height: 200px;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 2px dashed #ccc;
+}
+ 
+.rack-details-modal-user-image-icon {
+    font-size: 60px;
+    color: #999;
+}
+
+/* Carousel Container */
+.rack-details-modal-user-carousel {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Nav Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-nav:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-nav.prev { left: 5px; }
+.carousel-nav.next { right: 5px; }
+
+/* Dots Indicator */
+.carousel-dots {
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #007bff;
+}

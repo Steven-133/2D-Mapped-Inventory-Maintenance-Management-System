@@ -1,0 +1,124 @@
+/* WarehouseMap.css */
+
+/* --- 1. Map Canvas Container --- */
+/* This ensures the map sits inside a white box that scrolls if needed */
+.admin-hp-konva-stage-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Matches Admin container radius */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* Layout positioning */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    
+    /* Important for layout: fills the rest of the screen height */
+    flex: 1; 
+    overflow: auto; /* Adds scrollbars if the map (1600px) is wider than screen */
+    position: relative;
+    /* margin-top: 20px;  <-- Removed this to match Admin layout tightness */
+}
+
+/* --- 2. Stage Wrapper --- */
+/* Ensures the scrollable area knows how big the map actually is */
+.stage-wrapper {
+    display: inline-block;
+    min-width: 1600px; /* Must match STAGE_WIDTH in JSX */
+    min-height: 900px; /* Must match STAGE_HEIGHT in JSX */
+}
+
+/* --- 3. Header Button Fixes (Check In / Check Out) --- */
+/* We target the buttons specifically to force the "Box" look */
+
+.admin-hp-header .btn-action.check-in,
+.admin-hp-header .btn-action.check-out {
+    /* Box Shape (matches Admin HP) */
+    border-radius: 5px; 
+    
+    /* Smaller, compact padding */
+    padding: 8px 16px; 
+    
+    /* Font sizing */
+    font-size: 14px;
+    font-weight: 600;
+    
+    /* Spacing */
+    margin-left: 10px;
+    height: auto; 
+    min-width: 100px; /* Ensures buttons are consistent width */
+    
+    /* Alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Check In - Solid Blue */
+.btn-action.check-in {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+.btn-action.check-in:hover {
+    background-color: #0069d9;
+}
+
+/* Check Out - White with Blue Border */
+.btn-action.check-out {
+    background-color: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+.btn-action.check-out:hover {
+    background-color: #f0f8ff;
+}
+
+/* --- 4. Tooltip Styles for Alerts (New Feature) --- */
+.custom-alert-tooltip {
+    position: fixed;
+    background-color: white;
+    border: 1px solid #dc3545;
+    border-left: 5px solid #dc3545;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10000;
+    pointer-events: none;
+    min-width: 200px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-alert-tooltip h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #dc3545;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.custom-alert-tooltip ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-alert-tooltip li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.alert-item-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.alert-qty {
+    color: #dc3545;
+    font-weight: bold;
+}

@@ -1,0 +1,247 @@
+.Rack-Details-Modal-admin-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* --- Added Barcode Container Styles --- */
+.Rack-Details-Modal-barcode-container {
+    background: white;
+    padding: 4px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+.Rack-Details-Modal-barcode-container canvas {
+    max-height: 100%;
+}
+
+.Rack-Details-Modal-admin-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 1100px;
+    max-width: 95vw;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh; /* Prevent it being taller than screen */
+    overflow-y: auto; /* Allow scroll if screen is small */
+}
+
+.Rack-Details-Modal-admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.Rack-Details-Modal-admin-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    color: #000;
+}
+
+.Rack-Details-Modal-admin-save-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+.Rack-Details-Modal-admin-save-btn:hover { background-color: #0056b3; }
+
+.Rack-Details-Modal-admin-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+}
+
+.Rack-Details-Modal-admin-body {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.Rack-Details-Modal-admin-left { flex: 1; min-width: 0; }
+.Rack-Details-Modal-admin-right { flex: 0 0 350px; padding-left: 20px; border-left: 1px solid #eee; }
+
+.Rack-Details-Modal-admin-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.mt-large { margin-top: 40px; }
+
+/* Grid / Table Styles */
+.Rack-Details-Modal-admin-row-header {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    padding-right: 15px; /* Offset for scrollbar */
+}
+
+.col-name { width: 60px; }
+.col-item { flex: 1; padding-left: 10px; }
+.col-qty, .col-thresh { width: 80px; text-align: center; }
+.col-remove { width: 70px; text-align: center; }
+
+/* UPDATED: Scrollable Area Class */
+.Rack-Details-Modal-admin-beam-list-scrollable {
+    max-height: 250px; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 5px; /* Prevent scrollbar overlapping content */
+}
+
+.Rack-Details-Modal-admin-beam-list { display: flex; flex-direction: column; gap: 10px; }
+
+.Rack-Details-Modal-admin-beam-row { display: flex; align-items: center; background: #fafafa; padding: 10px; border-radius: 6px; }
+
+.Rack-Details-Modal-admin-beam-label { width: 60px; font-weight: 600; }
+
+.Rack-Details-Modal-admin-input-container-wide { flex: 1; margin-right: 10px; }
+
+.Rack-Details-Modal-admin-input-qty, .Rack-Details-Modal-admin-input-thresh {
+    width: 60px; height: 35px; border: 1px solid #ccc; border-radius: 4px; text-align: center;
+}
+
+.Rack-Details-Modal-admin-slash { margin: 0 8px; color: #aaa; }
+
+.Rack-Details-Modal-admin-action-container { width: 70px; display: flex; justify-content: center; }
+
+/* UPDATED: Delete Button Style */
+.Rack-Details-Modal-admin-delete-btn {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.Rack-Details-Modal-admin-delete-btn:hover { background: #dc3545; color: #fff; }
+
+/* UPDATED: Add Button Style */
+.Rack-Details-Modal-admin-add-beam-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed #007BFF;
+    color: #007BFF;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.Rack-Details-Modal-admin-add-beam-btn:hover {
+    background: #e6f2ff;
+    border-style: solid;
+}
+
+/* Info Section */
+.Rack-Details-Modal-admin-info-header { display: flex; justify-content: space-between; margin-bottom: 5px; color: #666; }
+.Rack-Details-Modal-admin-progress-bg { height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+.Rack-Details-Modal-admin-progress-fill { height: 100%; background: #4CAF50; transition: width 0.3s; }
+.Rack-Details-Modal-admin-info-row { display: flex; justify-content: space-between; margin-top: 15px; color: #666; }
+.Rack-Details-Modal-admin-bold { font-weight: 700; color: #000; }
+
+/* --- Carousel --- */
+.Rack-Details-Modal-admin-carousel-container {
+    width: 100%; height: 200px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.Rack-Details-Modal-admin-carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.Rack-Details-Modal-admin-item-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+}
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+.carousel-counter {
+    position: absolute;
+    bottom: 35px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* Dropdown */
+.Rack-Details-Modal-admin-dropdown-wrapper { position: relative; width: 100%; }
+.Rack-Details-Modal-admin-dropdown-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+.Rack-Details-Modal-admin-dropdown-arrow { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.Rack-Details-Modal-admin-dropdown-list {
+    position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ccc; max-height: 150px; overflow-y: auto; z-index: 100;
+    list-style: none; padding: 0; margin: 0;
+}
+.Rack-Details-Modal-admin-dropdown-list li { padding: 8px; cursor: pointer; }
+.Rack-Details-Modal-admin-dropdown-list li:hover { background: #f0f0f0; }
+.Rack-Details-Modal-admin-no-image{
+    text-align: center;
+}

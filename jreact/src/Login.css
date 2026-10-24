@@ -1,0 +1,215 @@
+/* Login.css */
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 1. Page Background */
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/assets/images/logon.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark Overlay */
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px); 
+  z-index: 1;
+}
+
+/* 2. Login Card */
+.login-card {
+  position: relative;
+  z-index: 2; 
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 40px;
+  margin: 20px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* 3. Typography */
+.header-container {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+  font-size: 15px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* 4. Form Layout */
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* UPDATED CLASS NAME HERE */
+.login-input-group {
+  margin-bottom: 20px;
+  width: 100%;
+  display: block; /* Ensures vertical stacking */
+}
+
+.input-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 8px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 5. Inputs */
+.input-field {
+  width: 100%;
+  height: 50px;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-field:focus {
+  background-color: #ffffff;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.input-field::placeholder {
+  color: #9ca3af;
+}
+
+/* Password Eye Icon Wrapper */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.toggle-password:hover {
+  color: #111827;
+}
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 6. Button */
+.login-btn {
+  width: 100%;
+  height: 52px;
+  background-color: #0056b3; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-btn:hover {
+  background-color: #004494;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.login-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+}
+
+/* Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 40px 24px;
+    max-width: 90%;
+  }
+  
+  .login-title {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,335 @@
+/* Check-In Form Styles */
+
+/* Scoped variables to avoid conflicts with global roots */
+:root {
+  --check-in-popup-color-primary: #47A1EA;
+  --check-in-popup-text-subtitle: #9A9A9A;
+  --check-in-popup-text-placeholder: #D4D4D4;
+}
+
+/* Base styles for the fonts - Prefixed */
+.check-in-popup-font-roboto {
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+.check-in-popup-font-urbanist {
+  font-family: 'Urbanist', 'Helvetica', sans-serif;
+}
+
+.check-in-popup-font-roboto-flex {
+  font-family: 'Roboto Flex', 'Arial', sans-serif;
+}
+
+
+/* --- MAIN CONTAINER --- */
+
+.check-in-popup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+}
+
+.check-in-popup-container {
+  width: 465px;
+  height: 501px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER --- */
+
+.check-in-popup-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  transition: background-color 150ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.check-in-popup-close-button:hover {
+  background-color: #f3f4f6;
+}
+
+.check-in-popup-header-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.check-in-popup-subheader {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--check-in-popup-text-subtitle);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- STEP INDICATOR --- */
+
+.check-in-popup-step-indicator {
+  width: 63px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: background-color 200ms, color 200ms;
+}
+
+.check-in-popup-step-inactive {
+  background-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.check-in-popup-step-active {
+  background-color: var(--check-in-popup-color-primary);
+  color: white;
+}
+
+/* --- INPUT BLOCKS --- */
+
+.check-in-popup-input-block-group {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.check-in-popup-input-label-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  gap: 0.5rem;
+}
+
+.check-in-popup-input-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: 0.05em;
+}
+
+.check-in-popup-input-field-container {
+  flex-grow: 1;
+}
+
+.check-in-popup-input-field {
+  width: 354px;
+  max-width: 100%;
+  height: 47.75px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: box-shadow 150ms;
+  box-sizing: border-box;
+}
+.check-in-popup-input-field::placeholder {
+  color: var(--check-in-popup-text-placeholder);
+}
+.check-in-popup-input-field:focus {
+  border-color: var(--check-in-popup-color-primary);
+  box-shadow: 0 0 0 2px var(--check-in-popup-color-primary);
+}
+
+/* --- SCAN BUTTONS --- */
+
+.check-in-popup-scan-button-wrapper {
+  padding-top: 24px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.check-in-popup-scan-button {
+  width: 36px;
+  height: 38px;
+  background-color: var(--check-in-popup-color-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  transition: background-color 150ms;
+  border: none;
+  cursor: pointer;
+}
+.check-in-popup-scan-button:hover {
+  background-color: #3b82f6;
+}
+
+/* --- DIVIDER & SPACER --- */
+
+.check-in-popup-spacer {
+  flex-grow: 1;
+}
+
+.check-in-popup-divider-line-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-in-popup-divider-line {
+  width: 100%;
+  border-top: 1px solid #d1d5db;
+}
+
+/* --- ACTION BUTTONS --- */
+
+.check-in-popup-action-buttons-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.check-in-popup-action-button {
+  height: 40px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 150ms;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.check-in-popup-cancel-button {
+  width: 183px;
+  background-color: #f3f4f6;
+  color: #374151;
+}
+.check-in-popup-cancel-button:hover {
+  background-color: #e5e7eb;
+}
+
+.check-in-popup-complete-button {
+  width: 207.98px;
+  background-color: var(--check-in-popup-color-primary);
+  color: white;
+}
+.check-in-popup-complete-button:hover {
+  background-color: #3b82f6;
+}
+
+/* --- MAIN CONTAINER --- */
+
+.check-in-popup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* NEW OVERLAY STYLES */
+  position: fixed; /* Fixes it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensures it is on top of the map */
+  
+  padding: 1.5rem;
+  /* Removed background-color: #f9fafb; as it's now an overlay */
+}
+
+.check-in-popup-container {
+  width: 465px;
+  height: 501px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* --- SUCCESS POPUP OVERLAY --- */
+.success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95); /* White background with slight transparency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  z-index: 50; /* Sit on top of inputs */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #e8f5e9; /* Light Green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.success-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e7d32; /* Dark Green */
+  margin-bottom: 10px;
+}
+
+.success-message {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  max-width: 80%;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.success-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.success-button:hover {
+  background-color: #1b5e20;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
