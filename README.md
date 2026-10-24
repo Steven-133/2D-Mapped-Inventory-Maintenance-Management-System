@@ -221,7 +221,7 @@ cd MRO_Thesis
 
 ---
 
-## 📡 REST API Reference
+##  REST API Reference
 
 All backend endpoints are hosted at `http://localhost/mro-api/`:
 
