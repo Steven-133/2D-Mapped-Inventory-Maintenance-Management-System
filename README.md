@@ -11,13 +11,13 @@
 
 ---
 
-## 📌 Repository Short Description (For GitHub About Section)
+##  Repository Short Description (For GitHub About Section)
 
 > **"A full-stack Maintenance, Repair, and Operations (MRO) Warehouse Management System featuring an interactive 2D digital twin floor map, real-time inventory and lifespan tracking, barcode/QR code generation, analytics, and role-based access control."**
 
 ---
 
-## 📖 Overview
+##  Overview
 
 The **MRO Warehouse Management System** is a full-stack, enterprise-grade inventory solution engineered specifically for **Maintenance, Repair, and Operations (MRO)** facilities. MRO environments face unique operational hurdles: high part diversity, critical equipment spare tracking, shelf-life and expiration constraints, and the need for rapid item retrieval during maintenance downtime.
 
@@ -25,16 +25,16 @@ This project delivers an interactive **2D Digital Twin** of the warehouse floor,
 
 ---
 
-## ✨ Core Features
+##  Core Features
 
-### 🗺️ 1. Interactive 2D Digital Twin (Warehouse Floor Map)
+###  1. Interactive 2D Digital Twin (Warehouse Floor Map)
 - **Visual Canvas (Powered by Konva.js)**: Drag-and-drop rack positioning on a 1600x900 grid canvas.
 - **Dynamic Color Coding**: Area/zone customization with contrast-aware labeling and color legends.
 - **Visual Rack Inspection**: Click any rack to view stored items, quantities, capacity, and current allocations.
 - **Real-Time Visual Alerts**: Racks blink with red outlines when items inside trigger low stock or expiry alerts.
 - **Layout Persistence**: Save, load, and update warehouse grid configurations dynamically to the database.
 
-### 📦 2. Smart MRO Inventory & Lifespan Management
+###  2. Smart MRO Inventory & Lifespan Management
 - **Detailed Part Attributes**: Model number, part name, serial numbers, unit price, stock quantity, currency (PHP), category, and image upload.
 - **Lifespan & Expiry Engine**:
   - Automatically calculates shelf-life states (**Good**, **Expiring within 30 days**, or **Expired**).
@@ -42,18 +42,18 @@ This project delivers an interactive **2D Digital Twin** of the warehouse floor,
 - **Low Stock Thresholds**: Individual minimum quantity triggers alerting staff before spare shortages occur.
 - **Location Auto-Resolution**: Intelligently resolves and tracks effective rack and zone locations, referencing recent transaction logs for unplaced parts.
 
-### 🏷️ 3. Integrated Barcode & QR Code Engine
+###  3. Integrated Barcode & QR Code Engine
 - **Dual Label Generator**: Switch between 1D Barcodes (`Code128` via JsBarcode) and 2D QR Codes (`qrcode.react`).
 - **Printable Labels**: Generate and print standardized part label tags directly from the UI for physical bin/shelf labeling.
 - **Fast Lookup**: Search and filter parts instantly using part model, name, or serial number.
 
-### 🔄 4. Inventory Lifecycle & Transaction Auditing
+###  4. Inventory Lifecycle & Transaction Auditing
 - **Check-in (Stock Replenishment)**: Log newly arrived parts, update quantities, and assign target rack/zone.
 - **Check-out (Issuance for Maintenance)**: Issue spare parts to maintenance jobs, track personnel, and log reasons.
 - **Defective Handling & Quarantine**: Mark damaged or failing items, track quarantine status, and isolate from available stock.
 - **Complete Audit Trail**: Every movement logs timestamp, user, quantity delta, item model, serial number, source/target location, and transaction notes.
 
-### 📊 5. Analytics & Executive Dashboard
+###  5. Analytics & Executive Dashboard
 - **Key Metrics Overview**: Real-time cards for Total SKUs, Total Quantity, Inventory Valuation, Low Stock Alerts, and Defective Counts.
 - **Dead Stock Detector**: Tracks dormant inventory with configurable inactivity thresholds (e.g., 90 days default).
 - **Velocity Tracker (Fast vs. Slow Movers)**: Analyzes check-out frequencies filtered across **Daily**, **Weekly**, **Monthly**, or **All-Time** periods.
@@ -61,18 +61,18 @@ This project delivers an interactive **2D Digital Twin** of the warehouse floor,
   - **PDF Export**: Clean, styled tabular audit reports powered by `jsPDF` and `jspdf-autotable`.
   - **Excel Export**: Rich `.xlsx` spreadsheets formatted with headers and column styling via `ExcelJS`.
 
-### 👥 6. Role-Based Access Control (RBAC) & Security
+###  6. Role-Based Access Control (RBAC) & Security
 - **Admin Role**: Full system access (inventory CRUD, user administration, layout editing, system configuration, automated backup).
 - **Warehouse Staff Role**: Streamlined operational access (warehouse map viewer, check-in, check-out, item lookup).
 - **Password Protection**: Passwords securely hashed using standard PHP `bcrypt`.
 
-### ⚙️ 7. System Configuration & Backup
+###  7. System Configuration & Backup
 - **Custom Branding**: Upload enterprise logos and customize UI header accents.
 - **Automated Database Backup**: Trigger one-click MySQL backups directly to OneDrive or local storage via `backup.php`.
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -96,7 +96,7 @@ This project delivers an interactive **2D Digital Twin** of the warehouse floor,
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 | Layer | Technologies |
 |---|---|
@@ -110,7 +110,7 @@ This project delivers an interactive **2D Digital Twin** of the warehouse floor,
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 The database `mro_warehouse` consists of 4 core tables:
 
@@ -147,7 +147,7 @@ The database `mro_warehouse` consists of 4 core tables:
 
 ---
 
-## 🚀 Quick Start Guide
+##  Quick Start Guide
 
 ### Prerequisites
 1. **Node.js**: v18.0 or newer (tested on v24.11)
@@ -212,7 +212,7 @@ cd MRO_Thesis
 
 ---
 
-## 🔑 Default Credentials
+##  Default Credentials
 
 | Role | Email | Password | Access Level |
 |---|---|---|---|
@@ -247,7 +247,7 @@ All backend endpoints are hosted at `http://localhost/mro-api/`:
 
 ---
 
-## 📁 Project Directory Structure
+## Project Directory Structure
 
 ```text
 MRO_Thesis/
@@ -297,7 +297,7 @@ MRO_Thesis/
 
 ---
 
-## 🛠️ Build for Production
+##  Build for Production
 
 To produce an optimized production bundle of the React frontend:
 
@@ -310,13 +310,13 @@ The compiled assets will be placed in `jreact/dist/` ready to be served by any s
 
 ---
 
-## 🎓 Academic Thesis Context
+##  Academic Thesis Context
 
 This platform was designed, researched, and implemented as an **Undergraduate Thesis Project** in Computer Science / Information Technology. The objective was to address real-world MRO warehouse inefficiencies—such as lost maintenance hours searching for spares, unmonitored part degradation/expiry, and disjointed inventory records—through visual digital twinning, automated auditing, and real-time operational analytics.
 
 ---
 
-## 📄 License
+##  License
 This repository is developed for academic, educational, and evaluation purposes.
 =======
 # 2D-Mapped-Inventory-Maintenance-Management-System
