@@ -1,3 +1,4 @@
+ HEAD
 # MRO Warehouse Management System (WMS)
 ### Maintenance, Repair, and Operations (MRO) Digital Twin & Inventory Platform
 
@@ -317,3 +318,7 @@ This platform was designed, researched, and implemented as an **Undergraduate Th
 
 ## 📄 License
 This repository is developed for academic, educational, and evaluation purposes.
+=======
+# 2D-Mapped-Inventory-Maintenance-Management-System
+A full-stack Maintenance, Repair, and Operations (MRO) Warehouse Management System featuring an interactive 2D digital twin floor map, real-time inventory and lifespan  tracking, barcode/QR code generation, analytics, and role-based access control.
+
